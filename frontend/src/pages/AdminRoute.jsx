@@ -14,6 +14,7 @@ export default function AdminRoute() {
   useEffect(() => {
     calculateStats();
   }, [submissions]);
+  
 
   const calculateStats = () => {
     const total = submissions.length;

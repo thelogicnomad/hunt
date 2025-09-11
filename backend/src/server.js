@@ -28,6 +28,14 @@ const corsOptions = {
   credentials: true
 };
 app.use(cors(corsOptions));
+// Ensure headers even if route not matched by cors middleware (safety net)
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-admin-secret, Authorization');
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  next();
+});
 app.options('*', cors(corsOptions)); // Enable pre-flight for all routes
 
 app.use(express.json());
