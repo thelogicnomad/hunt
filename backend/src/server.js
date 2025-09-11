@@ -14,6 +14,9 @@ connectDB();
 
 const app = express();
 
+// Trust first proxy (Vercel adds X-Forwarded-For)
+app.set('trust proxy', 1);
+
 // Middlewares
 app.use(helmet());
 
