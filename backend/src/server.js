@@ -9,6 +9,7 @@ import submissionRoutes from './routes/submissionRoutes.js';
 dotenv.config();
 
 // Initialize DB
+// Initialize DB
 connectDB();
 
 const app = express();
@@ -49,5 +50,10 @@ app.use((req, res) => {
   res.status(404).json({ message: '404: NOT_FOUND', error: 'The requested resource was not found' });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Start server only if not running in a serverless environment
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+export default app;
