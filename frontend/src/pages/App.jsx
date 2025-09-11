@@ -992,7 +992,7 @@ const MainInterface = ({
                 animate={{ scale: [1, 1.2, 1], opacity: [0.8, 1, 0.8] }}
                 transition={{ duration: 1.8, repeat: Infinity }}
               />
-              <span>TREASURE HUNT • ROUND 01 • LIVE</span>
+              
               <motion.span 
                 className="w-1.5 h-1.5 bg-green-400 rounded-full"
                 animate={{ scale: [1, 1.2, 1], opacity: [0.8, 1, 0.8] }}
