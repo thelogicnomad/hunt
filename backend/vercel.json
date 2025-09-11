@@ -1,11 +1,9 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/**/*.js", "use": "@vercel/node" }
+    { "src": "api/server.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/submit", "dest": "/api/submit.js" },
-    { "src": "/admin/submissions", "dest": "/api/admin/submissions.js" },
-    { "src": "/admin/reset", "dest": "/api/admin/reset.js" }
+    { "src": "/.*", "dest": "/api/server.js" }
   ]
 }
