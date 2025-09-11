@@ -1,6 +1,6 @@
 import express from 'express';
 import { Submission } from '../models/Submission.js';
-import { TEAMS, ANSWER } from '../constants/teams.js';
+import { TEAMS } from '../constants/teams.js';
 import { adminAuth } from '../middlewares/adminAuth.js';
 
 const router = express.Router();
@@ -9,7 +9,8 @@ const router = express.Router();
 const validateSubmission = (teamId, answer) => {
   const valid = TEAMS.includes(teamId);
   if (!valid) return { valid: false };
-  const isCorrect = answer.toLowerCase().trim() === ANSWER.toLowerCase();
+  const correctAns = (process.env.ANSWER || process.env.ans || '').toLowerCase();
+  const isCorrect = answer.toLowerCase().trim() === correctAns;
   return { valid: true, isCorrect };
 };
 
