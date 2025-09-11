@@ -15,7 +15,7 @@ export default function App() {
   const shouldReduceMotion = useReducedMotion();
   
   // Technical Riddle Question
-  const question = "I execute code in browsers, born in 1995, and my name sounds like coffee. What am I?";
+  const question = "I am the self-consuming dragon of logic, eating my own computational tail in an endless loop until destiny's termination condition awakens - what am I";
 
   // VR Entry Animation Sequence
   useEffect(() => {
