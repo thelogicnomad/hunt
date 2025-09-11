@@ -22,15 +22,18 @@ app.use(helmet());
 
 // CORS configuration
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://hunt-iota.vercel.app'],
-  methods: ['GET', 'POST', 'OPTIONS'],
+  origin: (origin, callback) => {
+    // allow requests with no origin like mobile apps or curl requests
+    callback(null, true);
+  },
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'x-admin-secret', 'Authorization'],
-  credentials: true
+  credentials: false
 };
 app.use(cors(corsOptions));
 // Ensure headers even if route not matched by cors middleware (safety net)
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-admin-secret, Authorization');
   if (req.method === 'OPTIONS') return res.status(200).end();
