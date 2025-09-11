@@ -1178,47 +1178,7 @@ const MainInterface = ({
           </motion.form>
 
           {/* Footer */}
-          <motion.div
-            className="mt-7 text-center text-violet-400/60 text-xs space-y-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9, duration: 0.4 }}
-          >
-            <div className="flex items-center justify-center space-x-4">
-              <span className="flex items-center">
-                <motion.span 
-                  className="w-1 h-1 bg-green-400 rounded-full mr-1"
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.8, 1, 0.8] }}
-                  transition={{ duration: 1.8, repeat: Infinity }}
-                />
-                Secure
-              </span>
-              <span className="flex items-center">
-                <motion.span 
-                  className="w-1 h-1 bg-blue-400 rounded-full mr-1"
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.8, 1, 0.8] }}
-                  transition={{ duration: 1.8, repeat: Infinity, delay: 0.6 }}
-                />
-                Real-time
-              </span>
-              <span className="flex items-center">
-                <motion.span 
-                  className="w-1 h-1 bg-violet-400 rounded-full mr-1"
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.8, 1, 0.8] }}
-                  transition={{ duration: 1.8, repeat: Infinity, delay: 1.2 }}
-                />
-                Optimized
-              </span>
-            </div>
-            
-            <motion.div
-              className="text-violet-500/40 text-xs"
-              animate={{ opacity: [0.4, 0.7, 0.4] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-            >
-              🔮 Powered by Quantum Intelligence 🔮
-            </motion.div>
-          </motion.div>
+        
         </div>
       </motion.div>
     </motion.div>
