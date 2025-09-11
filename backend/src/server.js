@@ -44,7 +44,7 @@ app.options('*', cors(corsOptions)); // Enable pre-flight for all routes
 app.use(express.json());
 
 // Basic rate limiting
-const limiter = rateLimit({ windowMs: 60 * 1000, max: 30 });
+const limiter = rateLimit({ windowMs: 60 * 1000, max: 30, skip: (req) => req.method === 'OPTIONS' });
 app.use(limiter);
 
 // Health check endpoint
