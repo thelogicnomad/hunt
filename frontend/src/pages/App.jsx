@@ -15,7 +15,7 @@ export default function App() {
   const shouldReduceMotion = useReducedMotion();
   
   // Technical Riddle Question
-  const question = "I am the self-consuming dragon of logic, eating my own computational tail in an endless loop until destiny's termination condition awakens - what am I";
+  const question = "I run and run but have no feet, I vanish fast, yet none can beat. I'm never full, I always spend, Till finally I reach my end.";
 
   // VR Entry Animation Sequence
   useEffect(() => {

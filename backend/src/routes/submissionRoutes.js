@@ -48,7 +48,7 @@ router.post('/submit', async (req, res) => {
     return res.json({
       message: selected
         ? 'Congratulations! You have been selected for the next rounds.'
-        : 'Good job! Your answer is correct but selection slots are filled.',
+        : 'Good job! Your answer is correct but selection slots are filled. Good Luck Next time',
     });
   } catch (err) {
     console.error(err);
